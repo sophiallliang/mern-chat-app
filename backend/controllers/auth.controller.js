@@ -18,8 +18,8 @@ export const signup = async (req, res) => {
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(password, salt);
 
-    const boyProfilePic = `https://ui-avatars.com/api/?name=${encodeURIComponent(fullName)}&background=0ea5e9&color=fff&rounded=true`;
-    const girlProfilePic = `https://ui-avatars.com/api/?name=${encodeURIComponent(fullName)}&background=f472b6&color=fff&rounded=true`;
+    const boyProfilePic = `https://api.dicebear.com/7.x/avataaars/svg?seed=${encodeURIComponent(username)}&backgroundColor=b6e3f4`;
+    const girlProfilePic = `https://api.dicebear.com/7.x/avataaars/svg?seed=${encodeURIComponent(username)}&backgroundColor=ffdfbf`;
     
 
     const newUser = new User({
